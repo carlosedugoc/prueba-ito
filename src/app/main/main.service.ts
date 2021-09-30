@@ -53,9 +53,19 @@ export class MainService {
     this.data.next(this.ELEMENT_DATA)
   }
 
-  public searchData(valor:string) {
+  public searchData(valor:IUser) {
+    debugger;
     if(valor) {
-      let data = [...this.ELEMENT_DATA.filter(x => x.user.toLowerCase().includes(valor.toLowerCase()))]
+      let {name, email, surname, user} = valor
+      name = name || " "
+      email = email || " "
+      surname = surname || " "
+      user = user || " "
+      let data = [...this.ELEMENT_DATA.filter(x =>
+        x.user.toLowerCase().includes(user.toLowerCase()) ||
+        x.email.toLowerCase().includes(email.toLowerCase()) ||
+        x.name.toLowerCase().includes(name.toLowerCase()) ||
+        x.surname.toLowerCase().includes(surname.toLowerCase()))]
       this.data.next(data)
     }else {
       this.data.next(this.ELEMENT_DATA)

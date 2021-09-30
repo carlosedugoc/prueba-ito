@@ -23,10 +23,11 @@
     <mat-error *ngIf="surname.invalid">Apellidos requerido</mat-error>
   </mat-form-field>
 </div>
-
-<button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon" (click)="save()">
-  Guardar
-</button>
-<button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon" (click)="close()" >
-  Cerrar
-</button>
+<div class="float-end">
+  <button mat-flat-button color="primary" aria-label="Example icon button with a plus one icon" (click)="save()">
+    Guardar
+  </button>
+  <button mat-flat-button color="warn" aria-label="Example icon button with a plus one icon" (click)="close()" >
+    Cerrar
+  </button>
+</div>

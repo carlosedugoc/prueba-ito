@@ -49,14 +49,14 @@ export class MainComponent implements AfterViewInit, OnInit  {
 // }
 
   getErrorMessage(control: string) {
-  if (this[control].hasError('required')) {
-    return `El campo ${control} es requerido`;
-  }
+    if (this[control].hasError('required')) {
+      return `El campo ${control} es requerido`;
+    }
 
-  if (control === 'email' && this[control].hasError('email')) {
-      return `El email no es válido`;
+    if (control === 'email' && this[control].hasError('email')) {
+        return `El email no es válido`;
+    }
   }
-}
 
   openDialog() {
     const dialogRef = this.dialog.open(AddComponent);
@@ -89,7 +89,12 @@ export class MainComponent implements AfterViewInit, OnInit  {
   }
 
   search() {
-    this.mainService.searchData(this.user.value)
+    this.mainService.searchData({
+      user:this.user.value,
+      email:this.email.value,
+      name:this.name.value,
+      surname:this.surname.value
+    })
   }
 
 }
