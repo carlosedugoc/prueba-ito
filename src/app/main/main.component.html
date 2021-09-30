@@ -1,34 +1,36 @@
-
-<div class="example-container">
+<!-- example-container -->
+<div class="fields-container">
   <mat-form-field appearance="fill">
     <mat-label>Usuario</mat-label>
     <input matInput [formControl]="user" required>
-    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    <!-- <mat-error *ngIf="user.invalid">{{getErrorMessage('user')}}</mat-error> -->
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Email</mat-label>
     <input matInput [formControl]="email" required>
-    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage('email')}}</mat-error> -->
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Nombrel</mat-label>
     <input matInput [formControl]="name" required>
-    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    <!-- <mat-error *ngIf="name.invalid">{{getErrorMessage('name')}}</mat-error> -->
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Apellidos</mat-label>
     <input matInput [formControl]="surname" required>
-    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    <!-- <mat-error *ngIf="surname.invalid">{{getErrorMessage('surname')}}</mat-error> -->
   </mat-form-field>
-    <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon" (click)="openDialog()">
+  <div>
+    <button mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon" (click)="openDialog()" class="me-2">
       <mat-icon>add</mat-icon>
     </button>
-    <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon" (click)="search()">
+    <button mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon" (click)="search()">
       <mat-icon>search</mat-icon>
     </button>
+  </div>
 </div>
 
 
@@ -70,10 +72,10 @@
       <th mat-header-cell *matHeaderCellDef> Acciones </th>
       <td mat-cell *matCellDef="let element">
         <div class="example-button-container">
-          <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon" (click)="openDialogView(element)">
+          <button mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon" (click)="openDialogView(element)" class="me-2">
             <mat-icon>launch</mat-icon>
           </button>
-          <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon" (click)= "openDialogEdit(element)">
+          <button mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon" (click)= "openDialogEdit(element)">
             <mat-icon>border_color</mat-icon>
           </button>
         </div>

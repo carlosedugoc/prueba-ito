@@ -31,9 +31,6 @@ export class MainService {
     {user: 'Calcium',email: 'Calcium@gmail.com', name:'Calcium', surname: 'Ca', active: true},
   ];
 
-  selectedData
-
-
   constructor() {
     this.data.next(this.ELEMENT_DATA)
   }

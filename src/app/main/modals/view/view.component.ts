@@ -27,4 +27,14 @@ export class ViewComponent implements OnInit {
     this.dialogRef.close()
   }
 
+  getErrorMessage(control: string) {
+    if (this[control].hasError('required')) {
+      return `El campo ${control} es requerido`;
+    }
+
+    if (control === 'email' && this[control].hasError('email')) {
+        return `El email no es válido`;
+    }
+  }
+
 }

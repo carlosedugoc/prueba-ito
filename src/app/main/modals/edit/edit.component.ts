@@ -27,7 +27,6 @@ export class EditComponent implements OnInit {
     })
   }
 
-
   ngOnInit(): void {
     this.user.setValue(this.data.user)
     this.email.setValue(this.data.email)

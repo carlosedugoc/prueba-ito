@@ -1,32 +1,38 @@
-<div class="example-container">
-  <mat-form-field appearance="fill">
-    <mat-label>Usuario</mat-label>
-    <input matInput [formControl]="user" required>
-    <mat-error *ngIf="user.invalid">Usuario requerido</mat-error>
-  </mat-form-field>
+<div class="fields-container">
+  <div>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Email</mat-label>
-    <input matInput [formControl]="email" required>
-    <mat-error *ngIf="email.invalid">email requerido</mat-error>
-  </mat-form-field>
+    <mat-form-field appearance="fill" class="me-2">
+      <mat-label>Usuario</mat-label>
+      <input matInput [formControl]="user" required>
+      <mat-error *ngIf="surname.invalid">{{getErrorMessage('surname')}}</mat-error>
+    </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Nombrel</mat-label>
-    <input matInput [formControl]="name" required>
-    <mat-error *ngIf="name.invalid">Nombre requerido</mat-error>
-  </mat-form-field>
+    <mat-form-field appearance="fill" class="me-2">
+      <mat-label>Email</mat-label>
+      <input matInput [formControl]="email" required>
+      <mat-error *ngIf="surname.invalid">{{getErrorMessage('surname')}}</mat-error>
+    </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Apellidos</mat-label>
-    <input matInput [formControl]="surname" required>
-    <mat-error *ngIf="surname.invalid">Apellidos requeridoasf</mat-error>
-  </mat-form-field>
+    <mat-form-field appearance="fill" class="me-2">
+      <mat-label>Nombrel</mat-label>
+      <input matInput [formControl]="name" required>
+      <mat-error *ngIf="surname.invalid">{{getErrorMessage('surname')}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="me-2">
+      <mat-label>Apellidos</mat-label>
+      <input matInput [formControl]="surname" required>
+      <mat-error *ngIf="surname.invalid">{{getErrorMessage('surname')}}</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="float-end">
+    <button mat-flat-button color="primary" aria-label="Example icon button with a plus one icon" (click)="save()" class="me-2" >
+      Guardar
+    </button>
+    <button mat-flat-button color="warn" aria-label="Example icon button with a plus one icon" (click)="close()">
+      Cerrar>
+    </button>
+  </div>
+
 </div>
 
-<button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon" (click)="save()" >
-  Guardar
-</button>
-<button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon" (click)="close()">
-  Cerrar>
-</button>
