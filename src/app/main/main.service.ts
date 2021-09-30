@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
-
-
-
-
+import { BehaviorSubject } from 'rxjs';
+import { IUser } from './user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +8,7 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 export class MainService {
 
-  ELEMENT_DATA: PeriodicElement[] = [
+  ELEMENT_DATA: IUser[] = [
     {user: 'Hydrogen',email: 'Hydrogen@gmail.com', name:'Hydrogen', surname: 'H', active: true},
     {user: 'Helium',email: 'Helium@gmail.com', name:'Helium', surname: 'He', active: true},
     {user: 'Lithium',email: 'Lithium@gmail.com', name:'Lithium', surname: 'Li', active: true},
@@ -41,7 +38,7 @@ export class MainService {
     this.data.next(this.ELEMENT_DATA)
   }
 
-  private data = new BehaviorSubject<PeriodicElement[]>([])
+  private data = new BehaviorSubject<IUser[]>([])
   data$ = this.data.asObservable()
 
   public getData() {
@@ -70,13 +67,6 @@ export class MainService {
 
 }
 
-export interface PeriodicElement {
-  user: string;
-  email: string;
-  name: string;
-  surname: string;
-  active: boolean;
-}
 
 
 

@@ -2,25 +2,25 @@
   <mat-form-field appearance="fill">
     <mat-label>Usuario</mat-label>
     <input matInput [formControl]="user" required>
-    <mat-error *ngIf="email.invalid">fdsafasf</mat-error>
+    <mat-error *ngIf="user.invalid">Usuario requerido</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Email</mat-label>
     <input matInput [formControl]="email" required>
-    <mat-error *ngIf="email.invalid">fdsafasf</mat-error>
+    <mat-error *ngIf="email.invalid">Email Requerido</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Nombrel</mat-label>
     <input matInput [formControl]="name" required>
-    <mat-error *ngIf="email.invalid">fdsafasf</mat-error>
+    <mat-error *ngIf="name.invalid">Nombre requerido</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Apellidos</mat-label>
     <input matInput [formControl]="surname" required>
-    <mat-error *ngIf="email.invalid">fdsafasf</mat-error>
+    <mat-error *ngIf="surname.invalid">Apellidos requerido</mat-error>
   </mat-form-field>
 </div>
 

@@ -9,10 +9,10 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class ViewComponent implements OnInit {
 
-  user = new FormControl('');
-  email = new FormControl('');
-  name = new FormControl('');
-  surname = new FormControl('');
+  user = new FormControl({value: '', disabled: true});
+  email = new FormControl({value: '', disabled: true});
+  name = new FormControl({value: '', disabled: true});
+  surname = new FormControl({value: '', disabled: true});
 
   constructor(@Inject(MAT_DIALOG_DATA) public data, public dialogRef: MatDialogRef<ViewComponent>) { }
 
